@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2563eb">
+<title>SafeReport โรงเรียน | แจ้งเหตุอย่างปลอดภัย</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Kanit,Arial,sans-serif;background:#f5f8ff;color:#14213d}
+header{background:#fff;border-bottom:1px solid #e7ecf5;position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px}.shield{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#4f46e5);display:grid;place-items:center;color:#fff}
+.nav button{border:0;background:#eef4ff;color:#2563eb;border-radius:10px;padding:9px 14px;font:inherit;cursor:pointer}
+.wrap{max-width:1100px;margin:auto;padding:35px 18px}.hero{background:linear-gradient(135deg,#1d4ed8,#4f46e5);color:#fff;border-radius:28px;padding:42px;position:relative;overflow:hidden;box-shadow:0 20px 55px #2563eb2b}
+.hero:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#ffffff15;right:-90px;top:-100px}
+.hero h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:8px 0 12px}.hero p{font-size:17px;max-width:650px;line-height:1.8;color:#e8eeff}.notice{margin-top:20px;background:#ffffff17;border:1px solid #ffffff33;border-radius:13px;padding:13px 16px}
+.card{background:#fff;border:1px solid #e6eaf2;border-radius:20px;padding:25px;margin-top:22px;box-shadow:0 10px 35px #14213d0b}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.full{grid-column:1/-1}label{font-weight:500;display:block;margin-bottom:7px}input,textarea,select{width:100%;padding:12px 13px;border:1px solid #dce2ee;border-radius:11px;font:inherit;outline:none}textarea{min-height:135px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:#2563eb;box-shadow:0 0 0 4px #2563eb12}
+.drop{border:2px dashed #cbd5e1;border-radius:13px;padding:22px;text-align:center;color:#667085;cursor:pointer}.preview{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.preview img{width:90px;height:70px;object-fit:cover;border-radius:9px}
+.btn{border:0;border-radius:11px;padding:12px 19px;font:inherit;font-weight:600;cursor:pointer}.primary{background:#2563eb;color:#fff}.actions{display:flex;justify-content:flex-end;margin-top:18px}.privacy{font-size:13px;color:#667085;line-height:1.7}.success{background:#ecfdf3;color:#087443;border-radius:11px;padding:13px;margin-top:15px}.hidden{display:none!important}
+.login{max-width:430px;margin:45px auto}.dashboard{margin-top:20px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat{background:#fff;border:1px solid #e6eaf2;border-radius:16px;padding:17px}.stat b{font-size:28px}.toolbar{display:flex;gap:10px;margin-bottom:15px}.toolbar input{max-width:330px}.table{overflow:auto}table{border-collapse:collapse;width:100%}th,td{padding:12px 9px;border-bottom:1px solid #edf0f5;text-align:left;vertical-align:top}th{color:#667085;font-weight:500}.badge{padding:4px 9px;border-radius:20px;background:#fff7df;color:#8a6100;font-size:12px}.done{background:#eaf8ee;color:#16733a}.reject{background:#feecec;color:#a61b1b}.thumb{width:58px;height:45px;object-fit:cover;border-radius:7px}.danger{background:#fff0f0;color:#c52222;margin-left:5px}.small{font-size:12px;color:#667085}
+@media(max-width:760px){.hero{padding:28px 22px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.stats{grid-template-columns:1fr}.toolbar{flex-direction:column}.toolbar input{max-width:none}.wrap{padding:22px 13px}.card{padding:19px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo"><span class="shield">🛡️</span> SafeReport โรงเรียน</div><button onclick="showAdmin()">🔐 สำหรับครู/ผู้ดูแล</button></div></header>
+<main class="wrap">
+<section id="reportPage">
+<div class="hero">
+<div style="position:relative;z-index:1"><div>🏫 ระบบแจ้งเหตุภายในโรงเรียน</div><h1>แจ้งเหตุอย่างปลอดภัย<br>ให้โรงเรียนช่วยตรวจสอบ</h1><p>สำหรับแจ้งพฤติกรรมหรือเหตุการณ์ที่ควรให้โรงเรียนตรวจสอบ เช่น การกลั่นแกล้ง การทะเลาะวิวาท การทำลายทรัพย์สิน หรือเหตุด้านความปลอดภัย</p><div class="notice">🔒 รายงานจะส่งให้ผู้ดูแลที่ได้รับอนุญาตเท่านั้น และไม่แสดงข้อมูลผู้แจ้งต่อสาธารณะ</div></div>
+</div>
+
+<div class="card">
+<h2>📝 แบบฟอร์มแจ้งเหตุ</h2>
+<p class="privacy">กรุณาให้ข้อมูลตามข้อเท็จจริง หลีกเลี่ยงการใส่ข้อมูลส่วนตัวของนักเรียนเกินความจำเป็น ระบบนี้ไม่ใช่พื้นที่สำหรับประจานหรือตัดสินบุคคล ผู้ดูแลควรตรวจสอบข้อเท็จจริงก่อนดำเนินการ</p>
+<form id="form">
+<div class="grid">
+<div><label>ประเภทเหตุการณ์</label><select id="type" required><option value="">เลือกประเภท</option><option>การกลั่นแกล้ง / รังแก</option><option>ทะเลาะวิวาท / ความรุนแรง</option><option>ทำลายทรัพย์สิน</option><option>การคุกคาม / ข่มขู่</option><option>การกระทำผิดกฎโรงเรียน</option><option>เหตุด้านความปลอดภัย</option><option>อื่น ๆ</option></select></div>
+<div><label>วันที่เกิดเหตุ</label><input id="date" type="date" required></div>
+<div class="full"><label>สถานที่เกิดเหตุ</label><input id="place" required placeholder="เช่น อาคาร 2 / สนามกีฬา / ห้องเรียน"></div>
+<div class="full"><label>รายละเอียดเหตุการณ์</label><textarea id="message" required placeholder="อธิบายว่าเกิดอะไรขึ้น เมื่อใด ที่ไหน และข้อมูลที่ช่วยให้โรงเรียนตรวจสอบได้"></textarea></div>
+<div class="full"><label>ชื่อผู้ถูกรายงาน (ถ้าจำเป็น)</label><input id="person" placeholder="ระบุเท่าที่จำเป็นต่อการตรวจสอบ"><p class="small">ข้อมูลนี้จะไม่ถูกแสดงบนหน้าเว็บสาธารณะ</p></div>
+<div class="full"><label>รูปภาพ / หลักฐาน</label><div class="drop" onclick="files.click()">📷 <b>เลือกรูปภาพ</b><br><span class="small">ควรแนบเฉพาะหลักฐานที่เกี่ยวข้อง</span></div><input id="files" type="file" accept="image/*" multiple hidden><div id="preview" class="preview"></div></div>
+<div><label>ต้องการให้ติดต่อกลับหรือไม่?</label><select id="contact"><option>ไม่ต้องการ (แจ้งแบบไม่ระบุตัวตน)</option><option>ต้องการให้ติดต่อกลับ</option></select></div>
+<div><label>ข้อมูลติดต่อ (ถ้าเลือกให้ติดต่อกลับ)</label><input id="contactInfo" placeholder="อีเมลหรือช่องทางติดต่อ"></div>
+</div>
+<div class="actions"><button class="btn primary">ส่งรายงานอย่างปลอดภัย →</button></div>
+<div id="success" class="success hidden">✓ รับรายงานแล้ว ขอบคุณที่ช่วยให้โรงเรียนตรวจสอบเหตุการณ์ได้อย่างเหมาะสม</div>
+</form>
+</div>
+</section>
+
+<section id="loginPage" class="hidden"><div class="card login"><h2>🔐 หลังบ้านผู้ดูแล</h2><p class="privacy">พื้นที่นี้สำหรับครูหรือผู้ดูแลที่ได้รับอนุญาตเท่านั้น</p><label>รหัสผ่าน</label><input id="pass" type="password"><div class="actions"><button class="btn primary" onclick="login()">เข้าสู่ระบบ</button></div></div></section>
+
+<section id="adminPage" class="hidden"><div class="dashboard">
+<div style="display:flex;justify-content:space-between;align-items:end"><div><div style="color:#2563eb;font-weight:600">ADMIN DASHBOARD</div><h2 style="margin:3px 0">รายการแจ้งเหตุ</h2></div><button class="btn" onclick="logout()">ออกจากระบบ</button></div>
+<div class="stats"><div class="stat">ทั้งหมด<br><b id="total">0</b></div><div class="stat">รอตรวจสอบ<br><b id="pending">0</b></div><div class="stat">ตรวจสอบแล้ว<br><b id="checked">0</b></div></div>
+<div class="card"><div class="toolbar"><input id="search" placeholder="🔎 ค้นหารายงาน..." oninput="render()"><select id="filter" onchange="render()"><option value="">ทุกสถานะ</option><option>รอตรวจสอบ</option><option>กำลังตรวจสอบ</option><option>ตรวจสอบแล้ว</option><option>ไม่พบการกระทำผิด</option></select></div><div class="table"><table><thead><tr><th>เวลา</th><th>ประเภท</th><th>รายละเอียด</th><th>ผู้ถูกรายงาน</th><th>หลักฐาน</th><th>สถานะ</th><th></th></tr></thead><tbody id="tbody"></tbody></table></div></div>
+</div></section>
+</main>
+<script>
+const ADMIN_PASSWORD="เปลี่ยนรหัสผ่านก่อนใช้งานจริง";
+let reports=JSON.parse(localStorage.getItem("safe_reports")||"[]"), images=[];
+const $=x=>document.getElementById(x);
+files.onchange=async e=>{images=[];for(const f of e.target.files) images.push(await read(f));preview.innerHTML=images.map(i=>`<img src="${i}">`).join("")};
+function read(f){return new Promise(r=>{const x=new FileReader();x.onload=()=>r(x.result);x.readAsDataURL(f)})}
+form.onsubmit=e=>{e.preventDefault();reports.unshift({id:Date.now(),type:type.value,date:date.value,place:place.value,message:message.value,person:person.value,imgs:images,status:"รอตรวจสอบ",created:new Date().toLocaleString("th-TH")});localStorage.setItem("safe_reports",JSON.stringify(reports));form.reset();images=[];preview.innerHTML="";success.classList.remove("hidden");setTimeout(()=>success.classList.add("hidden"),5000)}
+function showAdmin(){reportPage.classList.add("hidden");loginPage.classList.remove("hidden");adminPage.classList.add("hidden")}
+function login(){if(pass.value===ADMIN_PASSWORD){sessionStorage.admin="1";loginPage.classList.add("hidden");adminPage.classList.remove("hidden");render()}else alert("รหัสผ่านไม่ถูกต้อง")}
+function logout(){sessionStorage.removeItem("admin");adminPage.classList.add("hidden");reportPage.classList.remove("hidden")}
+function render(){let q=search.value.toLowerCase(),f=filter.value,r=reports.filter(x=>(!q||(x.type+x.place+x.message+x.person).toLowerCase().includes(q))&&(!f||x.status===f));total.textContent=reports.length;pending.textContent=reports.filter(x=>x.status==="รอตรวจสอบ").length;checked.textContent=reports.filter(x=>x.status==="ตรวจสอบแล้ว").length;tbody.innerHTML=r.length?r.map(x=>`<tr><td>${x.created}</td><td>${esc(x.type)}<br><span class="small">${esc(x.place)}</span></td><td style="white-space:normal;min-width:230px">${esc(x.message)}</td><td>${esc(x.person||"ไม่ได้ระบุ")}</td><td>${x.imgs?.length?x.imgs.map(i=>`<img class="thumb" src="${i}">`).join(""):"—"}</td><td><span class="badge ${x.status==="ตรวจสอบแล้ว"?"done":x.status==="ไม่พบการกระทำผิด"?"reject":""}">${x.status}</span></td><td><select onchange="st(${x.id},this.value)"><option>รอตรวจสอบ</option><option>กำลังตรวจสอบ</option><option>ตรวจสอบแล้ว</option><option>ไม่พบการกระทำผิด</option></select><button class="btn danger" onclick="del(${x.id})">ลบ</button></td></tr>`).join(""):`<tr><td colspan="7" style="text-align:center;padding:35px;color:#667085">ยังไม่มีรายงาน</td></tr>`}
+function st(id,s){let x=reports.find(x=>x.id===id);if(x){x.status=s;localStorage.setItem("safe_reports",JSON.stringify(reports));render()}}
+function del(id){if(confirm("ลบรายงานนี้หรือไม่?")){reports=reports.filter(x=>x.id!==id);localStorage.setItem("safe_reports",JSON.stringify(reports));render()}}
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+</script>
+</body>
+</html>
