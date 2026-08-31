@@ -59,7 +59,7 @@ header{background:#fff;border-bottom:1px solid #e7ecf5;position:sticky;top:0;z-i
 </div></section>
 </main>
 <script>
-const ADMIN_PASSWORD="เปลี่ยนรหัสผ่านก่อนใช้งานจริง";
+const ADMIN_PASSWORD="admin123";
 let reports=JSON.parse(localStorage.getItem("safe_reports")||"[]"), images=[];
 const $=x=>document.getElementById(x);
 files.onchange=async e=>{images=[];for(const f of e.target.files) images.push(await read(f));preview.innerHTML=images.map(i=>`<img src="${i}">`).join("")};
